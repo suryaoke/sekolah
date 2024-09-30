@@ -208,7 +208,7 @@
                      <div class="modal-body grid grid-cols-12 gap-4 gap-y-3">
                          <div class="col-span-12 sm:col-span-12"> <label for="modal-form-1"
                                  class="form-label">Email</label>
-                             <input id="modal-form-1" type="email"
+                             <input id="modal-form-1" type=""
                                  name="email" class="form-control"
                                  placeholder="Email">
                              <span class="error-message text-danger"></span>
