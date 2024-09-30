@@ -44,15 +44,19 @@ $datakontak = mysqli_fetch_array($kontak);
                     enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="text" name="nama_pengirim" class="form-control" placeholder="Nama">
+                        <span class="error-message text-danger"></span>
                     </div>
                     <div class="form-group">
                         <input type="email" name="email" class="form-control" placeholder="Email">
+                        <span class="error-message text-danger"></span>
                     </div>
                     <div class="form-group">
                         <input type="text" name="judul" class="form-control" placeholder="Subject">
+                        <span class="error-message text-danger"></span>
                     </div>
                     <div class="form-group">
                         <textarea name="isi_pesan" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                        <span class="error-message text-danger"></span>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
@@ -79,34 +83,34 @@ $datakontak = mysqli_fetch_array($kontak);
 
         $('#myForm').validate({
             rules: { // Aturan validasi untuk setiap input
+                nama_pengirim: {
+                    required: true, // Wajib diisi
+                },
                 email: {
                     required: true, // Wajib diisi
                 },
-                instagram: {
-                    required: true, // Wajib diisi
-                },
 
-                no_telp: {
+                judul: {
                     required: true, // Wajib diisi
                 },
-                alamat: {
+                isi_pesan: {
                     required: true, // Wajib diisi
 
                 },
 
             },
             messages: { // Pesan error yang akan ditampilkan jika validasi gagal
+                nama_pengirim: {
+                    required: 'Please Enter Your Nama Pengirim',
+                },
                 email: {
                     required: 'Please Enter Your Email',
                 },
-                instagram: {
-                    required: 'Please Enter Your Instagram',
+                judul: {
+                    required: 'Please Enter Your Subject',
                 },
-                no_telp: {
-                    required: 'Please Enter Your No Telp',
-                },
-                alamat: {
-                    required: 'Please Enter Your Alamat',
+                isi_pesan: {
+                    required: 'Please Enter Your Message',
 
                 },
             },

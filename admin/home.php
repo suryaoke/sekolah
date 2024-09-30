@@ -1,8 +1,22 @@
 <?php
-// Query for the total number of 'admin'
-// $querycountadmin = mysqli_query($koneksi, "SELECT COUNT(*) as total_admin FROM user ");
-// $datacountadmin = mysqli_fetch_array($querycountadmin);
-// $total_admin = $datacountadmin['total_admin']; // Extract the total value
+
+$querycountadmin = mysqli_query($koneksi, "SELECT COUNT(*) as total_admin FROM user ");
+$datacountadmin = mysqli_fetch_array($querycountadmin);
+$total_admin = $datacountadmin['total_admin'];
+
+
+$querycountnews = mysqli_query($koneksi, "SELECT COUNT(*) as total_news FROM user ");
+$datacountnews = mysqli_fetch_array($querycountnews);
+$total_news = $datacountnews['total_news'];
+
+
+$querycountactivities = mysqli_query($koneksi, "SELECT COUNT(*) as total_activities FROM user ");
+$datacountactivities = mysqli_fetch_array($querycountactivities);
+$total_activities = $datacountactivities['total_activities'];
+
+$querycountpesan = mysqli_query($koneksi, "SELECT COUNT(*) as total_pesan FROM user ");
+$datacountpesan = mysqli_fetch_array($querycountpesan);
+$total_pesan = $datacountpesan['total_pesan'];
 
 
 ?>
@@ -58,7 +72,7 @@
                                     <div class="flex">
                                         <i data-lucide="users" class="report-box__icon text-primary"></i>
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6"></div>
+                                    <div class="text-3xl font-medium leading-8 mt-6"> <?= $total_admin  ?> </div>
                                     <div class="text-base text-slate-500 mt-1">Data admin</div>
                                 </div>
                             </div>
@@ -68,10 +82,15 @@
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
-                                        <i data-lucide="package" class="report-box__icon text-pending"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper">
+                                            <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                                            <path d="M18 14h-8" />
+                                            <path d="M15 18h-5" />
+                                            <path d="M10 6h8v4h-8V6Z" />
+                                        </svg>
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6"></div>
-                                    <div class="text-base text-slate-500 mt-1">Barang</div>
+                                    <div class="text-3xl font-medium leading-8 mt-6"> <?= $total_news ?> </div>
+                                    <div class="text-base text-slate-500 mt-1">News</div>
                                 </div>
                             </div>
                         </div>
@@ -80,10 +99,10 @@
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
-                                        <i data-lucide="file-text" class="report-box__icon text-primary"></i>
+                                        <i data-lucide="activity" class="report-box__icon text-primary"></i>
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6"></div>
-                                    <div class="text-base text-slate-500 mt-1">Data Lelang</div>
+                                    <div class="text-3xl font-medium leading-8 mt-6"> <?= $total_activities ?></div>
+                                    <div class="text-base text-slate-500 mt-1">Activities</div>
                                 </div>
                             </div>
                         </div>
@@ -92,10 +111,10 @@
                             <div class="report-box zoom-in">
                                 <div class="box p-5">
                                     <div class="flex">
-                                        <i data-lucide="file-text" class="report-box__icon text-success"></i>
+                                        <i data-lucide="message-circle" class="report-box__icon text-success"></i>
                                     </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6"></div>
-                                    <div class="text-base text-slate-500 mt-1">Data Penawaran Lelang</div>
+                                    <div class="text-3xl font-medium leading-8 mt-6"> <?= $total_pesan ?> </div>
+                                    <div class="text-base text-slate-500 mt-1">Message</div>
                                 </div>
                             </div>
                         </div>

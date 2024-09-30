@@ -78,9 +78,9 @@ $datakontak = mysqli_fetch_array($kontak);
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
-            <form action="#" class="searchform order-lg-last">
+            <form action="index.php" class="searchform order-lg-last">
                 <div class="form-group d-flex">
-                    <input type="text" class="form-control pl-3" placeholder="Search">
+                    <input name="cari" type="text" class="form-control pl-3" placeholder="Search News">
                     <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
                 </div>
             </form>

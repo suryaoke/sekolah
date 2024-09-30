@@ -15,10 +15,14 @@
 
 </head>
 <!-- END: Head -->
+<?php
+// Mendapatkan parameter 'page' dari URL, default adalah 'home'
+$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+?>
 
 <body class="main">
     <!-- BEGIN: Mobile Menu -->
-    <!-- <div class="mobile-menu md:hidden">
+    <div class="mobile-menu md:hidden">
         <div class="mobile-menu-bar">
             <a href="" class="flex mr-auto">
                 <img alt="Midone - HTML Admin Template" class="w-6" src="assets/dist/images/smapertiwi.png">
@@ -28,33 +32,74 @@
         <div class="scrollable">
             <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="x-circle" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             <ul class="scrollable__content py-2">
-                <li>
-                    <a href="javascript:;.html" class="menu menu--active">
-                        <div class="menu__icon"> <i data-lucide="home"></i> </div>
-                        <div class="menu__title"> Dashboard <i data-lucide="chevron-down" class="menu__sub-icon transform rotate-180"></i> </div>
-                    </a>
-                    <ul class="menu__sub-open">
-                        <li>
-                            <a href="side-menu-light-dashboard-overview-1.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                                <div class="menu__title"> Overview 1 </div>
-                            </a>
-                        </li>
 
-                    </ul>
+                <li>
+                    <a href="index.php" class="menu <?php echo ($page == 'home' || $page == 'profile/index') ? 'menu--active' : ''; ?>">
+                        <div class=" menu__icon"> <i data-lucide="Home"></i>
+                        </div>
+                        <div class="menu__title"> Dashboard </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="?page=admin/index" class="menu <?php echo ($page == 'admin/index') ? 'menu--active' : ''; ?>">
+                        <div class=" menu__icon"> <i data-lucide="users"></i>
+                        </div>
+                        <div class="menu__title"> Admin </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="?page=about/index" class="menu <?php echo ($page == 'about/index') ? 'menu--active' : ''; ?>">
+                        <div class=" menu__icon"> <i data-lucide="info"></i>
+                        </div>
+                        <div class="menu__title"> About </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="?page=news/index" class="menu <?php echo ($page == 'news/index') ? 'menu--active' : ''; ?>">
+                        <div class=" menu__icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper">
+                                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+                                <path d="M18 14h-8" />
+                                <path d="M15 18h-5" />
+                                <path d="M10 6h8v4h-8V6Z" />
+                            </svg>
+                        </div>
+                        <div class="menu__title"> News </div>
+                    </a>
                 </li>
 
                 <li>
-                    <a href="side-menu-light-inbox.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="inbox"></i> </div>
-                        <div class="menu__title"> Inbox </div>
+                    <a href="?page=activities/index" class="menu <?php echo ($page == 'activities/index') ? 'menu--active' : ''; ?>">
+                        <div class=" menu__icon"> <i data-lucide="activity"></i>
+                        </div>
+                        <div class="menu__title"> Activities </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="?page=activities/index" class="menu <?php echo ($page == 'activities/index') ? 'menu--active' : ''; ?>">
+                        <div class=" menu__icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-contact">
+                                <path d="M16 2v2" />
+                                <path d="M7 22v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" />
+                                <path d="M8 2v2" />
+                                <circle cx="12" cy="11" r="3" />
+                                <rect x="3" y="4" width="18" height="18" rx="2" />
+                            </svg>
+                        </div>
+                        <div class="menu__title"> Kontak </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="?page=message/index" class="menu <?php echo ($page == 'message/index') ? 'menu--active' : ''; ?>">
+                        <div class=" menu__icon">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <div class="menu__title"> Mesaage </div>
                     </a>
                 </li>
 
 
             </ul>
         </div>
-    </div> -->
+    </div>
     <!-- END: Mobile Menu -->
     <!-- BEGIN: Top Bar -->
     <div class="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-12 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-12">
@@ -109,10 +154,7 @@
             <!-- BEGIN: Side Menu -->
             <nav class="side-nav">
                 <ul>
-                    <?php
-                    // Mendapatkan parameter 'page' dari URL, default adalah 'home'
-                    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-                    ?>
+
                     <li>
                         <a href="index.php" class="side-menu <?php echo ($page == 'home' || $page == 'profile/index') ? 'side-menu--active' : ''; ?>">
                             <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
@@ -162,7 +204,7 @@
 
                     </li>
                     <li>
-                        <a href="?page=activities/index" class="side-menu <?php echo ($page == 'activities/index') ? 'side-menu--active' : ''; ?>">
+                        <a href="?page=message/index" class="side-menu <?php echo ($page == 'message/index') ? 'side-menu--active' : ''; ?>">
                             <div class="side-menu__icon"><i data-lucide="message-circle"></i> </div>
                             <div class="side-menu__title"> Message </div>
                         </a>
