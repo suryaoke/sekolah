@@ -18,7 +18,7 @@
             <!-- BEGIN: Register Info -->
             <div class="hidden xl:flex flex-col min-h-screen">
                 <a href="" class="-intro-x flex items-center pt-5">
-                    <img alt="Midone - HTML Admin Template" class="w-32" src="../assets/dist/images/smapertiwi.png">
+                    <img alt="Midone - HTML Admin Template" class="w-12" src="../assets/dist/images/smapertiwi.png">
                     <span class="text-white text-lg ml-3"> SMA Pertiwi 1 Padang</span>
                 </a>
                 <div class="my-auto">

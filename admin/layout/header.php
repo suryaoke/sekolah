@@ -84,7 +84,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                                 <rect x="3" y="4" width="18" height="18" rx="2" />
                             </svg>
                         </div>
-                        <div class="menu__title"> Kontak </div>
+                        <div class="menu__title"> Contact </div>
                     </a>
                 </li>
                 <li>
@@ -199,7 +199,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                                     <circle cx="12" cy="11" r="3" />
                                     <rect x="3" y="4" width="18" height="18" rx="2" />
                                 </svg> </div>
-                            <div class="side-menu__title"> Kontak </div>
+                            <div class="side-menu__title"> Contact </div>
                         </a>
 
                     </li>

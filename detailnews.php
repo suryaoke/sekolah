@@ -11,16 +11,16 @@ $datanews = mysqli_fetch_array($news);
 ?>
 
 
-<section class="ftco-section">
+<section class="">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 ftco-animate">
+            <div class="col-lg-12 ftco-animate">
                 <h2 class="mb-3"><?= $datanews['judul_news'] ?></h2>
 
                 <p>
                     <img src="../admin/uploads/<?php echo $datanews['gambar_news'] ?>" alt="" class="img-fluid">
                 </p>
-                <p>
+                <p style="text-align: justify;">
                     <?= $datanews['news'] ?>
                 </p>
                 <div class="tag-widget post-tag-container mb-5 mt-5">

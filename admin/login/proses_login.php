@@ -5,27 +5,26 @@ include "../koneksi.php";
 
 // Memulai session
 session_start();
-$_SESSION['login_success'] = 'Login Berhasil'; // Mengatur pesan sukses login ke dalam session
+$_SESSION['login_success'] = 'Login Berhasil';
 
-// Mengecek apakah tombol login telah ditekan
 if (isset($_POST['login'])) {
 
     // Mengambil input username dan password dari form login
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Mengecek data user di database berdasarkan username dan password yang dimasukkan
+    // Mengecek data user di database berdasarkan username dan password
     $user = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' AND password='$password'");
 
     // Mengecek apakah query menemukan user dengan username dan password yang sesuai
     if (mysqli_num_rows($user) > 0) {
-        // Mengambil data user dalam bentuk array asosiatif
+
         $data = mysqli_fetch_assoc($user);
 
         // Mengecek apakah status user adalah 'Aktif'
         if ($data['status'] == 'Aktif') {
-            // Menyimpan data user ke dalam session
-            session_start(); // Memulai kembali session jika belum ada
+
+            session_start();
             $_SESSION['id_user'] = $data['id_user']; // ID user
             $_SESSION['username'] = $data['username']; // Username
             $_SESSION['nama_lengkap'] = $data['nama_lengkap']; // Nama lengkap

@@ -64,7 +64,7 @@ $datakontak = mysqli_fetch_array($kontak);
                 </form>
             </div>
             <div class="col-md-6 d-flex align-items-stretch">
-                <div id="map"></div>
+                <!-- <img alt="Midone - HTML Admin Template" class="w-6" src="assets/images/bg-sma.jpg"> -->
             </div>
         </div>
     </div>

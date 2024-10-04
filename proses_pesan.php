@@ -19,12 +19,12 @@ if ($tambah) {
     // Setup PHPMailer
     $mail = new PHPMailer\PHPMailer\PHPMailer();
     try {
-        // Konfigurasi server email (sesuaikan dengan detail SMTP Anda)
+        // Konfigurasi server email (sesuaikan dengan detail SMTP )
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; // Ganti dengan server SMTP Anda
+        $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'dara79992@gmail.com'; // Ganti dengan email SMTP Anda
-        $mail->Password   = 'qlfwhfhmnpglsame';    // Ganti dengan password SMTP Anda
+        $mail->Username   = 'dara79992@gmail.com'; // Ganti dengan email SMTP 
+        $mail->Password   = 'qlfwhfhmnpglsame';    // Ganti dengan password SMTP 
         $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587; // Port SMTP, biasanya 587 atau 465 untuk TLS
 
@@ -41,9 +41,8 @@ if ($tambah) {
             <h1 style='color: #444; border-bottom: 2px solid #007BFF; padding-bottom: 10px;'>Pesan dari $nama_pengirim</h1>
             <p style='font-size: 16px;'><strong>Email:</strong> <a href='mailto:$email' style='color: #007BFF;'>$email</a></p>
             <p style='font-size: 16px;'><strong>Judul:</strong> $judul</p>
-             <p style='font-size: 16px;'><strong>Judul:</strong> $isi_pesan</p>
-            <p style='font-size: 16px;'><strong>Pesan:</strong></p>
-            <p style='font-size: 12px; color: #777; margin-top: 20px;'><small>Dikirim pada: $tanggal_create</small></p>
+             <p style='font-size: 16px;'><strong>Pesa:</strong> $isi_pesan</p>
+          
         </div>
         ";
 

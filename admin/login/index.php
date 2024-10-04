@@ -28,13 +28,13 @@ if (isset($_SESSION['id_user'])) {
         <div class="block xl:grid grid-cols-2 gap-4">
             <div class="hidden xl:flex flex-col min-h-screen">
                 <a href="" class="-intro-x flex items-center pt-5">
-                    <img alt="Midone - HTML Admin Template" class="w-32" src="../assets/dist/images/smapertiwi.png">
+                    <img alt="Midone - HTML Admin Template" class="w-12" src="../assets/dist/images/smapertiwi.png">
                     <span class="text-white text-lg ml-3"> SMA Pertiwi 1 Padang</span>
                 </a>
                 <div class="my-auto">
                     <img alt="Midone - HTML Admin Template" class="-intro-x w-25 -mt-16 " src="../assets/dist/images/High-School.png">
                     <div class="-intro-x text-white font-medium text-3xl leading-tight mt-10">
-                        Sistem Informasi <br> SMA pertiwi 1 Padang
+                        Sistem Informasi <br> SMA Pertiwi 1 Padang
                     </div>
                 </div>
             </div>
